@@ -23,19 +23,19 @@ module sn74151 (P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12,P13,P14,P15,P16);
 
    assign P6 = ~P5;
 
-   always @(P1, P8, P7, P1, P2, P3, P4, P12, P13, P14, P15) begin
+   always @(P1, P2, P3, P4, P7, P8, P9, P10, P11, P12, P13, P14, P15, P16) begin
 
       if ((P16 == 1'b 1) && (P8 == 1'b 0) &&  (P7 == 1'b 0)) begin
       
          case ({P11,P10,P9})
-            4'b000: P5=P4; 
-            4'b001: P5=P3;
-            4'b010: P5=P2;
-            4'b011: P5=P1;
-            4'b100: P5=P15;
-            4'b101: P5=P14;
-            4'b110: P5=P13;
-            4'b111: P5=P12;
+            3'b000: P5=P4; 
+            3'b001: P5=P3;
+            3'b010: P5=P2;
+            3'b011: P5=P1;
+            3'b100: P5=P15;
+            3'b101: P5=P14;
+            3'b110: P5=P13;
+            3'b111: P5=P12;
          endcase 
       end
       
